@@ -6,5 +6,5 @@ import { Component } from "@angular/core";
   styleUrls: ["./todo.component.css"]
 })
 export class TodoComponent {
-  constructor() {}
+  constructor( ) {}
 }
