@@ -10,7 +10,6 @@ export class TodoComponent implements OnInit {
   public list: string[] = [];
   constructor(private store: StoreService) {
     this.list = this.store.find("todolist");
-    console.log(this.list);
     if (!this.list) {
       this.store.create("todolist", []);
       this.list = [];
@@ -18,7 +17,7 @@ export class TodoComponent implements OnInit {
   }
   ngOnInit() {}
   onSubmit(value) {
-    console.log(value);
-    this.store.create("todolist", this.list.push(value));
+    this.list.push(value)
+    this.store.create("todolist", this.list);
   }
 }
