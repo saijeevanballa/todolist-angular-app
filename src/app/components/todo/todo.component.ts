@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { StoreService } from "../services/storage.service.ts"
+import { StoreService } from "../../services/storage.service.ts";
 
 @Component({
   selector: "app-todo",
@@ -7,19 +7,16 @@ import { StoreService } from "../services/storage.service.ts"
   styleUrls: ["./todo.component.css"]
 })
 export class TodoComponent implements OnInit {
-  public list: string[] = []
-  constructor(private store: StoreService ) {
-
-  }
-  ngOnInit(){
-    this.list = store.find("todolist")
-    if(!list && !list.length){
-      store.create("todolist", [])
+  public list: string[] = [];
+  constructor(private store: StoreService) {
+    this.list = this.store.find("todolist");
+    if (!this.list && !this.list.length) {
+      store.create("todolist", []);
     }
   }
-  onSubmit(value){
-    console.log(value)
-    store.create(this.list.push(value))
+  ngOnInit() {}
+  onSubmit(value) {
+    console.log(value);
+    this.store.create(this.list.push(value));
   }
-
 }
