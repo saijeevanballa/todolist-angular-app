@@ -5,6 +5,7 @@ export class StoreService {
   constructor() {}
   create(key: string, value: any) {
     try {
+      console.log("stored")
       localStorage.setItem(key, JSON.stringify(value));
     } catch (err) {
       console.error("Error saving to localStorage", err);
@@ -13,6 +14,7 @@ export class StoreService {
 
   find(key: string) {
     try {
+      console.log("find")
       return JSON.parse(localStorage.getItem(key));
     } catch (err) {
       console.error("Error getting data from localStorage", err);
