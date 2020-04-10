@@ -10,8 +10,9 @@ export class TodoComponent implements OnInit {
   public list: string[] = [];
   constructor(private store: StoreService) {
     this.list = this.store.find("todolist");
-    if (!this.list && !this.list.length) {
-      store.create("todolist", []);
+    if (!this.list) {
+      this.store.create("todolist", []);
+      this.list = []
     }
   }
   ngOnInit() {}
