@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { StoreService } from "../../services/storage.service"
+import { StoreService } from "../services/storage.service.ts"
 
 @Component({
   selector: "app-todo",
@@ -17,5 +17,9 @@ export class TodoComponent implements OnInit {
       store.create("todolist", [])
     }
   }
-  
+  onSubmit(value){
+    console.log(value)
+    store.create(this.list.push(value))
+  }
+
 }

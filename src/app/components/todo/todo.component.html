@@ -1,5 +1,6 @@
 <h1>Todo List</h1>
-
-<div>
-  
+<input #message type="text" placehoder="Enter your todo">
+<button (click)="onSubmit(message.value)">Submit</button>
+<div *ngFor="let msg of list">
+	<p>{{msg}}</p>
 </div>
