@@ -7,7 +7,7 @@ import { StoreService } from "../../services/storage.service.ts";
   styleUrls: ["./todo.component.css"]
 })
 export class TodoComponent implements OnInit {
-  public list: string[] = [];
+  public list: any[] = [];
   constructor(private store: StoreService) {
     this.list = this.store.find("todolist");
     if (!this.list) {
@@ -17,7 +17,16 @@ export class TodoComponent implements OnInit {
   }
   ngOnInit() {}
   onSubmit(value) {
-    this.list.push(value)
+    this.list.push({ message: value, checked: false });
+    this.store.create("todolist", this.list);
+  }
+  onChecked(index) {
+    this.list = this.list.map((obj, i) => index == i ? { ...obj, checked: !obj.checked } : obj);
+    this.store.create("todolist", this.list);
+  }
+
+  onDelete(index) {
+    this.list = this.list.filter((obj, i) => index != i);
     this.store.create("todolist", this.list);
   }
 }

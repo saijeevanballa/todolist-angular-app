@@ -1,0 +1,104 @@
+
+.main{
+  align-items: center;
+  background-color: #111;
+  display: flex;
+  font-family: Helvetica Neue, sans-serif;
+  height: 100vh;
+  /* justify-content: space-evenly; */
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  text-align: center;
+  color: #00caff;
+  flex-direction: column;
+  flex-wrap: nowrap
+}
+h1 {
+  color: inherit;
+  font-weight: 100;
+  font-size: 4em;
+  margin: 0;
+  padding-bottom: 15px;
+  flex-basis: 20%;
+}
+.input{
+  justify-content: space-around;
+  width: 320px;
+  display:flex;
+  flex-direction: row;
+   flex-wrap: wrap;
+}
+
+.record{
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  line-height: 1;
+  font-weight: 100;
+  font-size: 1.2em;
+  margin: 0;
+  flex-basis: 20%;
+
+}
+
+input[type="checkbox"]{
+  width: 50px; 
+  height: 50px; 
+}
+
+.submit,input {
+  background: #111;
+  border-radius: 5px;
+  border: 1px solid #00caff;
+  color: inherit;
+  font-size: .9em;
+  font-weight: 100;
+  line-height: inherit;
+  margin: 0;
+  outline: none;
+  padding: 5px 15px 10px;
+  transition: background .2s;
+}
+.submit:hover,
+.submit:active,
+.submit:disabled {
+  background: #00caff;
+  color: #111;
+}
+.submit:active {
+  outline: 2px solid #00caff;
+}
+.submit:focus {
+  border: 1px solid #00caff;
+}
+button + button {
+  margin-left: 3px;
+}
+
+.delete{
+  background: #111;
+  border-radius: 5px;
+  border: 1px solid red;
+  color: red;
+  font-weight: 100;
+  margin: 0;
+  outline: none;
+  transition: background .2s; 
+}
+
+.delete:hover,
+.delete:active,
+.delete:disabled {
+  background: red;
+  color: #111;
+  font-weight: 100;
+  font-size: .5em;
+}
+.submit:active {
+  outline: 2px solid #00caff;
+}
+
