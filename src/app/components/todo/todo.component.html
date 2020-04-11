@@ -1,6 +1,6 @@
 <h1>Todo List</h1>
 <input #message type="text" placehoder="Enter your todo">
 <button (click)="onSubmit(message.value)">Submit</button>
-<div *ngFor="let msg of list">
-	<p>{{msg}}</p>
+<div *ngFor="let msg of list; let i of index">
+	<p>{{i + 1}}.  {{msg}}</p>
 </div>
