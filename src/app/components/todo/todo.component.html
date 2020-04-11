@@ -7,12 +7,11 @@
 	<div *ngIf="list.length" class="list">
 		<h3>Your Todo List</h3>
 		<div *ngFor="let obj of list; index as i" class="record">
-			<input type="checkbox" [checked]="obj.checked" (click)="onChecked(i)">&#160;&#160;
+			<input type="checkbox" [checked]="obj.checked" (click)="onChecked(i)">
 			<label *ngIf="!obj.checked; else stricked"> {{obj.message}}</label>
 			<ng-template #stricked>
 				<s><label> {{obj.message}}</label></s>
 			</ng-template>
-			&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
 			<button class="delete" (click)="onDelete(i)">X</button>
 		</div>
 	</div>

@@ -40,9 +40,14 @@ h1 {
   line-height: 1;
   font-weight: 100;
   font-size: 1.2em;
-  margin: 0;
   flex-basis: 20%;
+  margin-left: 50px;
+  margin-right: 50px
 
+}
+label{
+  margin-left: 20px;
+  margin-right: 50px
 }
 
 input[type="checkbox"]{
