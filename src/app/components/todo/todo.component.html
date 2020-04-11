@@ -2,7 +2,7 @@
 	<h1>Todo List</h1>
 	<div class="input">
 		<input #message type="text" placeholder="Enter your todo">
-		<button class="submit" (click)="onSubmit(message.value)">Submit</button>
+		<button class="submit" (click)="onSubmit(message.value)" (click) = "message.value = ''">Submit</button>
 	</div>
 	<div *ngIf="list.length" class="list">
 		<h3>Your Todo List</h3>
