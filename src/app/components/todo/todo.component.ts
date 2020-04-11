@@ -17,11 +17,15 @@ export class TodoComponent implements OnInit {
   }
   ngOnInit() {}
   onSubmit(value) {
-    this.list.push({ message: value, checked: false });
-    this.store.create("todolist", this.list);
+    if (!!value && value.trim() != "") {
+      this.list.push({ message: value, checked: false });
+      this.store.create("todolist", this.list);
+    }
   }
   onChecked(index) {
-    this.list = this.list.map((obj, i) => index == i ? { ...obj, checked: !obj.checked } : obj);
+    this.list = this.list.map((obj, i) =>
+      index == i ? { ...obj, checked: !obj.checked } : obj
+    );
     this.store.create("todolist", this.list);
   }
 
